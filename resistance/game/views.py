@@ -13,8 +13,9 @@ def root(request):
         create_form = GameForm(request.POST)
         if create_form.is_valid():
             create_form.save()
-            messages.success(request, f'Gamecreated!')
-            return redirect("/game", name=request.POST.gameName)
+            game_name = create_form.cleaned_data.get('name')
+            messages.success(request, f'Game {game_name} created!')
+            return redirect("game", name=game_name)
     else:
         create_form = GameForm()
     return render(request, 'game/index.html', {'create_form': create_form})
