@@ -103,7 +103,8 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 PROJECT_APPS = [
-    'users'
+    'users',
+    'game'
 ]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
