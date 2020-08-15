@@ -1,12 +1,15 @@
+from django.contrib.auth.forms import UserCreationForm
 from django.shortcuts import render
 from django.http import HttpResponse
 
-# Create your views here.
-
 
 def register(request):
+    form = UserCreationForm()
 
-    return render(request, 'users/register.html')
+    context = {
+        'form': form
+    }
+    return render(request, 'users/register.html', context)
 
 
 def root(request):
