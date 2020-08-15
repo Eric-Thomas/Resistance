@@ -2,11 +2,13 @@ from django.contrib import messages
 from django.contrib.auth.forms import UserCreationForm
 from django.shortcuts import redirect, render
 
+from .forms import UserRegisterForm
+
 
 def register(request):
 
     if request.method == 'POST':
-        form = UserCreationForm(request.POST)
+        form = UserRegisterForm(request.POST)
 
         if form.is_valid():
 
@@ -18,7 +20,7 @@ def register(request):
             return redirect('root')
 
     else:
-        form = UserCreationForm()
+        form = UserRegisterForm()
 
     context = {
         'form': form
@@ -32,4 +34,5 @@ def root(request):
 
     Landing page that allows users to login or register
     """
+
     return render(request, 'users/index.html')
