@@ -1,3 +1,12 @@
 from django.db import models
 
-# Create your models here.
+
+class Game(models.Model):
+    """
+    Game Model
+
+    Attributes:
+    - ID
+    - Name
+    """
+    name = models.CharField(max_length=20)

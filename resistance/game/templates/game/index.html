@@ -1,12 +1,28 @@
 {% extends 'users/base.html' %}
+{% load crispy_forms_tags %}
 {% block content %}
 <h1>Welcome to Resistance</h1>
-<form action="/room" , method="GET">
-    <input type="text" name="room" id="room">
-    <button class="btn btn-success">Join Room</button>
-</form>
-<form action="/room" , method="POST">
-    <input type="text" name="room" id="room">
-    <button class="btn btn-success">Join Room</button>
-</form>
+<div class="content-section">
+    <form method="POST">
+        {% csrf_token %}
+        <fieldset class="form-group">
+            <legend class="border-bottom mb-4">Create Game</legend>
+            {{ create_form | crispy}}
+        </fieldset>
+        <div class="form-group">
+            <button class="btn btn-outline-info" type="submit" name="gameName">Submit</button>
+        </div>
+    </form>
+    <form action="/game/{name}">
+        {% csrf_token %}
+        <fieldset class="form-group">
+            <legend class="border-bottom mb-4">Join Game</legend>
+            <input type="text" name="name" id="name">
+        </fieldset>
+        <button class="btn btn-outline-info">Submit</button>
+    </form>
+</div>
+
+
+
 {% endblock content %}
