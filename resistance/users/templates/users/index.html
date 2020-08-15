@@ -1,4 +1,11 @@
 {% extends 'users/base.html' %}
 {% block content %}
 <h1>Welcome to Resistance</h1>
+{% if messages %}
+{% for message in messages %}
+<div class=" alert alert-{{ message.tags }}">
+    {{ message }}
+</div>
+{% endfor %}
+{% endif %}
 {% endblock content %}
