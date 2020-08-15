@@ -1,6 +1,5 @@
 from django.contrib.auth.forms import UserCreationForm
 from django.shortcuts import render
-from django.http import HttpResponse
 
 
 def register(request):
