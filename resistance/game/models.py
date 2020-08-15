@@ -9,4 +9,4 @@ class Game(models.Model):
     - ID
     - Name
     """
-    name = models.CharField(max_length=20)
+    name = models.CharField(max_length=50)

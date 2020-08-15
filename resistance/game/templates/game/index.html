@@ -3,23 +3,17 @@
 {% block content %}
 <h1>Welcome to Resistance</h1>
 <div class="content-section">
-    <form method="POST">
+    <form action="/game/{name}" method="POST">
         {% csrf_token %}
-        <fieldset class="form-group">
-            <legend class="border-bottom mb-4">Create Game</legend>
-            {{ create_form | crispy}}
-        </fieldset>
-        <div class="form-group">
-            <button class="btn btn-outline-info" type="submit" name="gameName">Submit</button>
-        </div>
+        <legend class="border-bottom mb-4">Create Game</legend>
+        {{ forms.game_create_form | crispy}}
+        <button class="btn btn-outline-info" type="submit">Submit</button>
     </form>
-    <form action="/game/{name}">
+    <form action="/joingame/{name}" method="POST">
         {% csrf_token %}
-        <fieldset class="form-group">
-            <legend class="border-bottom mb-4">Join Game</legend>
-            <input type="text" name="name" id="name">
-        </fieldset>
-        <button class="btn btn-outline-info">Submit</button>
+        <legend class="border-bottom mb-4">Join Game</legend>
+        {{ forms.game_join_form | crispy}}
+        <button class="btn btn-outline-info" type="submit">Submit</button>
     </form>
 </div>
 
