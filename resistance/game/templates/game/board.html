@@ -2,4 +2,35 @@
 
 {% block content %}
 <h1>Welcome to game {{name}}</h1>
+<div class="container shadow-lg p-3 mb-5 bg-dark text-light rounded">
+    <div class="row" id="mission_row">
+        <div class="col" id="mission_one_column">Mission One
+        </div>
+        <div class="col" id="mission_two_column">
+                <div>Mission Two</div>
+            </div>
+        </div>
+        <div class="col" id="mission_three_column">Mission Three
+
+        </div>
+        <div class="col" id="mission_four_column">Mission Four
+
+        </div>
+        <div class="col" id="mission_five_column">Mission Five
+
+        </div>
+    </div>
+    <div class="row">
+        <div class = "col">
+            Vote Track
+            <div class ="row" id="vote_track_row">
+                <div class="col" id="vote_one_column">1</div>
+                <div class="col" id="vote_two_column">2</div>
+                <div class="col" id="vote_three_column">3</div>
+                <div class="col" id="vote_four_column">4</div>
+                <div class="col" id="vote_five_column">5</div>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock content %}
