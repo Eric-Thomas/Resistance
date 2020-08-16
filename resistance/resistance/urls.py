@@ -27,7 +27,7 @@ urlpatterns = [
     path('login/', auth_views.LoginView.as_view(template_name='users/login.html'), name='login'),
     path('logout/', auth_views.LogoutView.as_view(template_name='users/logout.html'), name='logout'),
     path('lobby/', game_views.root, name='lobby'),
-    path('game/<name>', game_views.game, name='game'),
-    path('joingame/<name>', game_views.join_game, name='join game')
+    path('game', game_views.game, name='game'),
+    path('joingame', game_views.join_game, name='join game')
 
 ]

@@ -3,13 +3,13 @@
 {% block content %}
 <h1>Welcome to Resistance</h1>
 <div class="content-section">
-    <form action="/game/{name}" method="POST">
+    <form action="/game" method="POST">
         {% csrf_token %}
         <legend class="border-bottom mb-4">Create Game</legend>
         {{ forms.game_create_form | crispy}}
         <button class="btn btn-outline-info" type="submit">Submit</button>
     </form>
-    <form action="/joingame/{name}" method="POST">
+    <form action="/joingame" method="POST">
         {% csrf_token %}
         <legend class="border-bottom mb-4">Join Game</legend>
         {{ forms.game_join_form | crispy}}
