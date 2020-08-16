@@ -25,7 +25,8 @@ class Player(models.Model):
      - Team
     """
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    game_id = models.ForeignKey(Game, on_delete=models.PROTECT, default=None)
+    game_id = models.ForeignKey(
+        Game, on_delete=models.PROTECT, null=True, default=None)
 
 
 @receiver(post_save, sender=User)
