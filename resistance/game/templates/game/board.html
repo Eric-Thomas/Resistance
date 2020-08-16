@@ -3,49 +3,115 @@
 {% block content %}
 <h1>Welcome to {{name}}</h1>
 <div class="container shadow-lg p-3 mb-5 bg-dark text-light rounded text-center">
+    <div class="text-left">Missions</div>
     <div class="row" id="mission_row">
         <div class="col" id="mission_one_column">
-            <div>Mission One</div>
-            <div id="misson_one_size">
-                2
-            </div>
+            <button type="button" class="btn btn-light btn-circle btn-xl">
+                <div>Mission One</div>
+                <div class="font-weight-bold" id="misson_one_size">
+                    2
+                </div>
+            </button> 
         </div>
         <div class="col" id="mission_two_column">
-            <div>Mission Two</div>
-            <div id="misson_two_size">
-                3
-            </div>
+            <button type="button" class="btn btn-light btn-circle btn-xl">
+                <div>Mission Two</div>
+                <div class="font-weight-bold" id="misson_two_size">
+                    3
+                </div>
+            </button>
         </div>
         <div class="col" id="mission_three_column">
-            <div>Mission Three</div>
-            <div id="misson_three_size">
-                2
-            </div>
+            <button type="button" class="btn btn-light btn-circle btn-xl">
+                <div>Mission Three</div>
+                <div class="font-weight-bold" id="misson_three_size">
+                    2
+                </div>
+            </button>
         </div>
         <div class="col" id="mission_four_column">
-            <div>Mission Four</div>
-            <div id="misson_four_size">
-                3
-            </div>
+            <button type="button" class="btn btn-light btn-circle btn-xl">
+                <div>Mission Four</div>
+                <div class="font-weight-bold" id="misson_four_size">
+                    3
+                </div>
+            </button>
         </div>
         <div class="col" id="mission_five_column">
-            <div>Mission Five</div>
-            <div id="misson_five_size">
-                3
-            </div>
+            <button type="button" class="btn btn-light btn-circle btn-xl">
+                <div>Mission Five</div>
+                <div class="font-weight-bold" id="misson_five_size">
+                    3
+                </div>
+            </button>
         </div>
     </div>
     <div class="row">
         <div class = "col">
             <div class="text-left">Vote Track</div>
             <div class ="row" id="vote_track_row">
-                <div class="col" id="vote_one_column">1</div>
-                <div class="col" id="vote_two_column">2</div>
-                <div class="col" id="vote_three_column">3</div>
-                <div class="col" id="vote_four_column">4</div>
-                <div class="col text-danger" id="vote_five_column">5</div>
+                <div class="col" id="vote_one_column">
+                    <button type="button" class="btn btn-light btn-circle btn-md font-weight-bold">
+                        1
+                    </button>
+                </div>
+                <div class="col" id="vote_two_column">                    
+                    <button type="button" class="btn btn-light btn-circle btn-md font-weight-bold">
+                        2
+                    </button>
+                </div>
+                <div class="col" id="vote_three_column">
+                    <button type="button" class="btn btn-light btn-circle btn-md font-weight-bold">
+                        3
+                    </button>
+                </div>
+                <div class="col" id="vote_four_column">
+                    <button type="button" class="btn btn-light btn-circle btn-md font-weight-bold">
+                        4
+                    </button>
+                </div>
+                <div class="col" id="vote_five_column">
+                    <button type="button" class="btn btn-danger btn-circle btn-md font-weight-bold">
+                        5
+                    </button>
+                </div>
             </div>
         </div>
     </div>
 </div>
+
+<style type="text/css"> 
+    h1 { 
+        color:green; 
+    } 
+    .xyz { 
+        background-size: auto; 
+        text-align: center; 
+        padding-top: 100px; 
+    } 
+    .btn-circle.btn-sm { 
+        width: 30px; 
+        height: 30px; 
+        padding: 6px 0px; 
+        border-radius: 15px; 
+        font-size: 12px; 
+        text-align: center; 
+    } 
+    .btn-circle.btn-md { 
+        width: 50px; 
+        height: 50px; 
+        padding: 7px 10px; 
+        border-radius: 25px; 
+        font-size: 12px; 
+        text-align: center; 
+    } 
+    .btn-circle.btn-xl { 
+        width: 100px; 
+        height: 100px; 
+        padding: 10px 16px; 
+        border-radius: 55px; 
+        font-size: 14px; 
+        text-align: center; 
+    } 
+</style> 
 {% endblock content %}
