@@ -40,11 +40,13 @@ def join_game(request):
     """
     #  Query to see if game exists
     name = request.POST.get('name')
-    game = Game.objects.filter(name=name)
-    if (game.count() == 0):
+    try:
+        game = Game.objects.get(name=name)
+        player = Player.objects.get(user=request.user)
+        player.game_id = game
+        player.save()
+        return render(request, 'game/board.html', {'game': game})
+    except Exception as e:
+        print(e)
         messages.warning(request, f'Game {name} does not exist')
         return redirect('/lobby')
-    player = Player.objects.get(user=request.user)
-    player.game_id = game
-    player.save()
-    return render(request, 'game/board.html', {'game': game})
